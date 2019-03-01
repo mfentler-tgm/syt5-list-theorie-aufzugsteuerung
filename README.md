@@ -24,7 +24,7 @@ Daraufhin muss unter __Ethernet Adapter__ __Ethernet__ ausgewählt werden, damit
 Anschließend muss der ModBus TCP Master an das zuvor erstellte Ethernet-Element angehängt werden. Dafür __Rechtsklick auf Ethernet -> Gerät anhängen... -> Modbus -> Modbus TCP Master -> Modbus TCP Master -> Gerät anhängen__
     
 ### Ethernet konfigurieren
-
+Nun muss der Ethernet-Knoten konfiguriert werden. __Doppelklick auf Ethernet -> Auf den Reiter Allgemein switchen -> Auf den Button "..." drücken und di
 
 
 ## Slave - Konfiguration
@@ -49,6 +49,10 @@ Beim Slave muss man eigentlich nicht viel einstellen. Das einzige was man machen
 
 ![SlaveAllgemein](images/slaveAllg.PNG)
 
+### E/A-Abbild Einstellungen
+Hier muss noch die Buszykluszeit und bei den Variablen etwas eingestellt werden. Siehe Bild  
+![slaveBuszyklus.PNG]
+
 ## Starten
 Bevor man das Programm starten kann muss man sicherstellen, dass __Codesys Controll WIN V3 - x64 Systray__ läuft (Rechts unten bei diesen kleinen Symbolen, Rechtsklick auf das Programm ⇒ Start PLC).
 
@@ -58,8 +62,12 @@ Jetzt sollte beim Slave und beim Master folgendes zu sehen sein:
 ![Slave runs](images/slaveRuns.PNG)
 
 ## Eingänge -> Ausgänge
-Bei der Kommunikation zwischen Master und Slave sind die Ausgänge des Slaves die Eingänge des Masters. Dementsprechend muss man darauf achten, dass die Variablen auf die richtigen in der Registry gesetzt werden.
+Bei der Kommunikation zwischen Master und Slave wird ein Register als Speicherplatz für gemeinsam genütze Variablen verwendet. Die Eingänge am Slave sind die Ausgänge am Master (und umgekehrt).  
+Die Eingänge sind im __Holding-Register__ und die Ausgänge im __Input-Register__
+
 ![Slave Ausgang](images/slave_ea_ausgang.PNG)
+Diesen Eingängen/Ausgängen kann man auch __Variablen aus den Programmen zuweisen__. So kann man einen Schalter als Ausgangsvariable deklarieren.  
+Der andere definiert eine Variable als Eingang. Diese Variable weist er einer Lampe zu -> Wenn jetzt der Schalter auf der einen Maschine aktiviert wird, leuchtet die Lampe auf der anderen Maschine.
 
 ## Quelle
 https://www.codesys-blog.com/kommunikation/modbus-kommunikation-in-codesys/
