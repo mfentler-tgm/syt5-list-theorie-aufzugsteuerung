@@ -24,7 +24,11 @@ Daraufhin muss unter __Ethernet Adapter__ __Ethernet__ ausgewählt werden, damit
 Anschließend muss der ModBus TCP Master an das zuvor erstellte Ethernet-Element angehängt werden. Dafür __Rechtsklick auf Ethernet -> Gerät anhängen... -> Modbus -> Modbus TCP Master -> Modbus TCP Master -> Gerät anhängen__
     
 ### Ethernet konfigurieren
-Nun muss der Ethernet-Knoten konfiguriert werden. __Doppelklick auf Ethernet -> Auf den Reiter Allgemein switchen -> Auf den Button "..." drücken und di
+Nun muss der Ethernet-Knoten konfiguriert werden. __Doppelklick auf Ethernet -> Auf den Reiter Allgemein switchen -> Auf den Button "..." drücken und das gewünschte Netzwerkinterface auswählen. Die IP-Adresse, Subnetzmaske und das Gateway wird automatisch eingegeben. Somit ist die Konfiguration für den Master abgeschlossen
+
+### Slave mit Master verknüpfen
+
+Nun muss der Slave mit dem Master verknüpft werden. Dazu muss unter dem Masterknoten der Modbus TCP Slave eingebunden werden. Dazu Rechtsklick auf Modbus_TCP_Master -> Gerät anhängen... -> Modbus TCP Slave
 
 
 ## Slave - Konfiguration
