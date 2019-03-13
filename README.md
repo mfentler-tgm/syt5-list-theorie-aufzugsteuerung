@@ -1,11 +1,11 @@
 # Modbus Kommunikation zwischen zwei Maschinen
-
+Deveci, Fentler 5CHIT  
 ## Vorraussetzungen
 
 - Codesys V3.5 SP13 Patch1 (wurde verwendet)
 - 2 Rechner
 - 2 Applikationen, nicht die selbe (Müssen __64 Bit__ sein, sonst funktionierts nicht)
-- aktive Internetverbindung ;)
+- aktive Internetverbindung
 
 ## Firewall Konfiguration
 Wenn die Firewall blockiert, dann muss man den Port öffnen. In dem Fall muss man unter Windows in __Firewall & Netzwerkschutz/Erweiterte Einstellungen/Eingehende Regeln__ -> __Neue Regel/Port__  
@@ -81,6 +81,10 @@ Die Eingänge sind im __Holding-Register__ und die Ausgänge im __Input-Register
 ![Slave Ausgang](images/slave_ea_ausgang.PNG)
 Diesen Eingängen/Ausgängen kann man auch __Variablen aus den Programmen zuweisen__. So kann man einen Schalter als Ausgangsvariable deklarieren.  
 Der andere definiert eine Variable als Eingang. Diese Variable weist er einer Lampe zu -> Wenn jetzt der Schalter auf der einen Maschine aktiviert wird, leuchtet die Lampe auf der anderen Maschine.
+
+## Überprüfung
+Zur Überprüfung wurden auf dem Master und dem Slave jeweils eine Visualisierung, bestehend aus einer Lampe und einem Schalter, erstellt. Diesen Komponenten wurden die Variablem aus dem Register zugewiesen.  
+Wenn nun bei dem einem Gerät der Schalter aktiviert wird, so leuchtet die Lampe am anderen Gerät - und umgekehrt.
 
 ## Quelle
 https://www.codesys-blog.com/kommunikation/modbus-kommunikation-in-codesys/
